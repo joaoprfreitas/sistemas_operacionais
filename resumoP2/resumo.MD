@@ -200,18 +200,18 @@ FIFO queue.\
 Processos são executados na ordem de menor duração do CPU burst.\
 Se dois processos tem o mesmo tamanho de CPU burst, o que chegou primeiro é executado primeiro.\
 **Vantagem**: é comprovadamente ótimo.\
-**Desvantagem**: não há como implementar, pois não é possível saber o tamanho do CPU burst.
-É possível implementar com estimativas de CPU burst.
+**Desvantagem**: não há como implementar, pois não é possível saber o tamanho do CPU burst.\
+É possível implementar com estimativas de CPU burst.\
 Pode ser preemptivo ou não.
 
 #### 5.3.3 Round-Robin
 Define-se um quantum de tempo.\
 A ready queue é tratada como uma lista cirular.\
-O CPU schedules percorre a ready queue, executando cada processo por um quantum de tempo.\
+O CPU scheduler percorre a ready queue, executando cada processo por um quantum de tempo.\
 Novos processos são adicionados no final da lista.\
 Se o processo for finalizado, saí da lista, se não, vai para o fim da lista.\
-**Desvantagem**: tempo médio na waiting queue é geralmente bem grande.
-É preemptivo.
+**Desvantagem**: tempo médio na waiting queue é geralmente bem grande.\
+É preemptivo.\
 Se o quantum for muito pequeno, o overhead de troca de contexto pode ser maior que o tempo de execução do processo. Se for muito grande, se transforma em FCFS.
 
 #### 5.3.4 Priority Scheduling
