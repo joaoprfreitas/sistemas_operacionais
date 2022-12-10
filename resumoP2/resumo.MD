@@ -15,7 +15,7 @@
     Código e dados são fixos, mas pilha e heap podem crescer e diminuir.
     Stack cresce para baixo, heap cresce para cima.
 
-**Programa**: arquivo armazenado em disco contendo uma lista de instruções.\
+**Programa**: arquivo armazenado em disco contendo uma lista de instruções.
 
     Um programa se torna um processo quando um arquivo executável é carregado na memória.
 
@@ -41,7 +41,7 @@ Cada processo é representado por um PCB (Process Control Block) no SO.
 
 #### 3.2.1 Scheduling Queues
 **Ready queue**: fila de processos prontos para serem executados.\
-**Wait queue**: fila de processos que estão esperando por um evento externo.\
+**Wait queue**: fila de processos que estão esperando por um evento externo.
 
 Uma vez despachado para execução, o processo pode:
 
@@ -126,7 +126,7 @@ Vantagens do multithreading:
         4. Escalabilidade: threads podem rodas em paralelo.
 
 ### 4.2 Multicore Programming
-**Concorrência**: permite que mais de uma tarefa faça progresso.
+**Concorrência**: permite que mais de uma tarefa faça progresso.\
 **Paralelismo**: permite a execução de mais de uma tarefa ao mesmo tempo.
 
 #### 4.2.2 Tipos de paralelismo
@@ -166,11 +166,11 @@ A queue é normalmente composta pelos PCBs dos processos.
 **Preemptive**: o processo pode ser interrompido a qualquer momento.\
 **Nonpreemptive**: o processo permanece na CPU até terminar ou o estado ser alterado para waiting.
 
-Race condition pode ocorrente em preemptive scheduling quando dados são compartilhados entre vários processos.
+Race condition pode ocorrer em preemptive scheduling quando dados são compartilhados entre vários processos.
 
 #### 5.1.4 Dispatcher
 É o módulo que transfere o controle da CPU de um processo para outro.\
-Precisa ser o mais rápido possível, pois é chamado durante a troca de contexto.
+Precisa ser o mais rápido possível, pois é chamado durante a troca de contexto.\
 **Dispatcher latency**: tempo entre parar um processo e iniciar outro.
 
 ### 5.2 Scheduling Criteria
@@ -228,7 +228,7 @@ A prioridade por ser definida:
 Pode ser usado round-robin entre processos de mesma prioridade para evitar starvation.
 
 #### 5.3.5 Multilevel Queue Scheduling
-Cria-se uma fila para cada nível de prioridade.\
+Cria-se uma fila para cada nível de prioridade.
 
 #### 5.3.6 Multilevel Feedback Queue Scheduling
 Permite que um processo mude de fila.\
@@ -239,40 +239,40 @@ Um processo que fica muito tempo na fila de baixa prioridade é movido para a fi
 
 ### 5.4 Thread Scheduling
 Kernel level threads que são escalonados pelo SO.\
-User level threads são mapeadas para kernel level threads.\
+User level threads são mapeadas para kernel level threads.
 
 ### 5.5 Multiprocessor Scheduling
 #### 5.5.1 Abordagens para Multiple-Processor Scheduling
 **1. Symmetric Multiprocessing (SMP)**: cada processador é auto-esclonável.\
-**2. Asymmetric Multiprocessing**: apenas um processador acessa as estruturas de dados do sistema, o master server.\
+**2. Asymmetric Multiprocessing**: apenas um processador acessa as estruturas de dados do sistema, o master server.
 
-    Abordagem mais comum: cada processador tem sua própria fila de ready queue.\
+    Abordagem mais comum: cada processador tem sua própria fila de ready queue.
 
 #### 5.5.2 Multicore Processors
 Muitos núcleos no mesmo chip.\
 Duas ou mais threads em cada núcleo.\
 **Hyperthreading**: múltiplas threads em cada núcleo.\
-Cada núcleo executa apenas um thread por vez.\
+Cada núcleo executa apenas um thread por vez.
 
 #### 5.5.3 Load Balancing
 **Load balancing**: distribuir o trabalho entre os processadores. É necessário quando cada processador tem sua própria fila de ready queue.\
 **Push migration**: uma tarefa especifica checa periodicamente a carga de cada processador, distribuindo o trabalho entre eles.\
-**Pull migration**: um processador idle puxa uma waiting task de um processador ocupado.\
+**Pull migration**: um processador idle puxa uma waiting task de um processador ocupado.
 
 #### 5.5.4 Processor Affinity
 **Processor affinity**: um processo tem afinidade pelo processador que o está executando (warm cache).\
 **Soft affinity**: o SO tem uma política de manter o processo rodando no mesmo processador.\
-**Hard affinity**: syscalls especificam o conjunto de processadores que o processo pode ser executado.\
+**Hard affinity**: syscalls especificam o conjunto de processadores que o processo pode ser executado.
 
 #### 5.5.5 Heterogeneous Multiprocessing
 **Heterogeneous Multiprocessing**: processadores de diferentes tipos (clock speed, power management).\
-**big.LITTLE**: processadores de alta performance são combinados com processadores eficientes em energia.\
+**big.LITTLE**: processadores de alta performance são combinados com processadores eficientes em energia.
 
 ## 6. Synchronization tools
-**Race condition**: diferentes processos acessam e manipulam o mesmo dado concorrentemente, sendo a saída dependente da ordem de execução.\
+**Race condition**: diferentes processos acessam e manipulam o mesmo dado concorrentemente, sendo a saída dependente da ordem de execução.
 
 ### 6.2 The Critical-Section Problem
-**Critical section**: região do código que acessa dados compartilhados.\
+**Critical section**: região do código que acessa dados compartilhados.
 
 Uma solução deve satisfazer:
     
@@ -308,11 +308,11 @@ Possui um número fixo de recursos disponíveis.\
 Pode não haver busy waiting, pois o processo pode ser posto em sleep() até que o semáforo esteja disponível.
 ### 6.8 Liveness
 Conjunto de propriedades que um sistema deve satisfazer para garantir que os processos façam progresso durante o ciclo de vida de execução deles.\
-**Liveness failure**: performance e responsividade do sistema são afetados.\
+**Liveness failure**: performance e responsividade do sistema são afetados.
 
 #### 6.8.1 Deadlock
 #### 6.8.2 Priority Inversion
-Processo de alta prioridade bloqueado por um processo de baixa prioridade.\
+Processo de alta prioridade bloqueado por um processo de baixa prioridade.
 
 ### 6.9 Evaluation
 
@@ -320,22 +320,22 @@ Processo de alta prioridade bloqueado por um processo de baixa prioridade.\
 ### 7.1 Classic Problems of Synchronization
 #### 7.1.1 Bounded-Buffer Problem
 Problema de sincronização entre produtor e consumidor.\
-Produtor: pode produzir full buffers (lotação máxima).\
+Produtor: pode produzir full buffers (lotação máxima).
 
 #### 7.1.2 Readers-Writers Problem
 Problema de sincronização entre leitores e escritores.\
 Leitores: podem ler dados compartilhados.\
-Escritores: têm acesso exclusivo aos dados compartilhados, ou seja, não pode ser feita leitura enquanto estiver escrevendo.\
+Escritores: têm acesso exclusivo aos dados compartilhados, ou seja, não pode ser feita leitura enquanto estiver escrevendo.
 
-Se há um escritor esperando, nenhum leitor pode ler.\
+Se há um escritor esperando, nenhum leitor pode ler.
 
 #### 7.1.3 Dining Philosophers Problem
-Problema de sincronização entre filósofos.\
+Problema de sincronização entre filósofos.
 
 ### 7.2 Synchronization within the kernel
 #### 7.2.2 Linux
 Kernel é completamente preemptivo.\
-A técnica mais simples de sincronização é o atomic integer.\
+A técnica mais simples de sincronização é o atomic integer.
 
 ### 7.3 POSIX Synchronization
 User level
@@ -344,17 +344,17 @@ User level
 
 ### 7.5 Alternative Approaches
 #### 7.5.1 Transactional Memory
-Sequência de operações de escrita e leitura em memória realiadas atomicamente.\
+Sequência de operações de escrita e leitura em memória realizadas atomicamente.\
 Se uma operação falhar, todas as operações anteriores são desfeitas.\
 Não é possível deadlock.
 
 #### 7.5.2 OpenMP
-Pragma para paralelização de código.\
+Pragma para paralelização de código.
 
 #### 7.5.3 Functional Programming Languages
 
 ## 8. Deadlocks
-**Deadlock**: situação em que dois ou mais processos estão esperando por um recurso que está sendo utilizado por outro processo, e nenhum deles pode continuar sua execução.\
+**Deadlock**: situação em que dois ou mais processos estão esperando por um recurso que está sendo utilizado por outro processo, e nenhum deles pode continuar sua execução.
 
 ### 8.1 System Model
 
@@ -384,19 +384,19 @@ Se há ciclo(s), **pode haver** deadlock.
 ### 8.4 Methods for handling deadlocks
 Os SOs normalmente assumem que não existe deadlock, ficando a cargo do programador evitar que isso ocorra.\
 **Deadlock avoidance**: requer que o SO saiba antecipadamente quais recursos serão utilizados por cada thread.\
-**Deadlock prevention**: fornece um conjunto de métodos para garantir que pelo menos uma condição necessária para o deadlock não seja satisfeita.\
+**Deadlock prevention**: fornece um conjunto de métodos para garantir que pelo menos uma condição necessária para o deadlock não seja satisfeita.
 
 ## 9. Main memory
 ### 9.1 Background
 #### 9.1.1 Basic Hardware
 As instruções e dados devem estar na memória principal para a CPU poder executar.\
 Em caso de memory stall, um nucleo multithread pode mudar a thread que está em execução.\
-Cada processo possui seu próprio espáco de endereçamento:
+Cada processo possui seu próprio espaço de endereçamento:
     
         1. Base register: armazena o endereço base do processo (menor valor).
         2. Limit register: armazena o tamanho do processo.
 
-Se um processo tentar acessar um endereço que não pertence a ele, ocorre um trap que dispara fatal error.\
+Se um processo tentar acessar um endereço que não pertence a ele, ocorre um trap que dispara fatal error.
 
 #### 9.1.2 Address Binding
 **Address binding**: processo de associar um endereço virtual a um endereço físico.\
@@ -825,13 +825,12 @@ Um bit por bloco, 1 se livre, 0 se ocupado.\
 **Problema**: ineficiente se todo o vetor não estiver em memória.
 
 #### 14.5.2 Linked List
-Lista ligada dos blocos livres.\
-
+Lista ligada dos blocos livres.
 #### 14.5.3 Grouping
-Agrupar os blocos livres no primeiro bloco livre.\
+Agrupar os blocos livres no primeiro bloco livre.
 
 #### 14.5.4 Counting
-Armazena o primeiro bloco livre e a quantidade de blocos livres (para blocos contínuos).\
+Armazena o primeiro bloco livre e a quantidade de blocos livres (para blocos contínuos).
 
 ## 15. File-System Internal
 
@@ -844,4 +843,4 @@ File system deve ser montado antes de estar disponível
 **Raw disk**: disco sem file system.\
 Se a partição é bootavel, deve contem as informações de boot.\
 **Bootstrap loader**: ecnontrar, carregar e executar o kernel.\
-A **partição de boot** é montada em tempo de boot, contém o kernel e outros sistemas de arquivo.\
+A **partição de boot** é montada em tempo de boot, contém o kernel e outros sistemas de arquivo.
