@@ -468,7 +468,7 @@ Diminui o acesso à memória principal (1 acesso em vez de 2).
 
 #### 9.3.4 Shared Pages
 **Shared pages**: páginas que podem ser compartilhadas por vários processos.\
-Para ser compartilha, o código deve ser reentrante (natureza read-only).
+Para ser compartilhada, o código deve ser reentrante (natureza read-only).
 
 ### 9.4 Structure of the Page Table
 #### 9.4.1 Hierarchical Paging
@@ -558,13 +558,13 @@ Pode-se saber quais paginas foram ou não utilizadas pelo reference bit.\
 **Most Frequently Used (MFU)**
 
 #### 10.4.7 Page Buffering Algorithms
-Sempre que o paging device estiver parado, uma página modificada é selecionada e escrita no disco.\
+Sempre que o paging device estiver parado, uma página modificada é selecionada e escrita no disco.
 
 ### 10.5 Allocation of Frames
 O user process recebe qualquer frame livre.
 
 **Mininum Number of Frames**: Um número mínimo de frames alocados a cada processo é definido pela arquitetura.\
-**Equal Allocation**: valor = total de frames / número de processos.
+**Equal Allocation**: valor = total de frames / número de processos.\
 **Propotional Allocation**: valor é uma proporção de acordo com o número de páginas totais do processo.
 
 ### 10.6 Thrashing
@@ -646,8 +646,8 @@ CPU sente o interrupt-request line após a execução de cada instrução.\
 **nonmaskable interrupt**: interrupção que não pode ser desabilitada.\
 **maskable interrupt**: interrupção que pode ser desabilitada pela CPU quando estiver executando instruções críticas.\
 **interrupt vector**: tabela que contém os endereços dos interrupt handlers.\
-**Interrupções possuem níveis de prioridade**.
-**Trap**: interrupção que ocorre quando o processador executa uma instrução inválida ou tenta acessar uma região de memória não permitida.\
+**Interrupções possuem níveis de prioridade**.\
+**Trap**: interrupção que ocorre quando o processador executa uma instrução inválida ou tenta acessar uma região de memória não permitida.
 
 #### 12.2.4 Direct Memory Access (DMA)
 **DMA controller**: controlador que opera o DMA.\
@@ -661,10 +661,10 @@ Bloco de comando:
 
 ### 12.3 Application I/O Interface
 Sistema de IO independente do hardware.\
-Existem diferentes tipos de I/O: sincrono, assincrono, acesso sequencial, randomico, velicade de operação, etc.
+Existem diferentes tipos de I/O: sincrono, assincrono, acesso sequencial, randomico, velocidade de operação, etc.
 
 #### 12.3.1 Block and Character Devices
-Teclado é um exemplo de character stream device.\
+Teclado é um exemplo de character stream device.
 
 #### 12.3.2 Networking Devices
 Network socket interface: ler e receber pacotes de dados.
@@ -733,7 +733,7 @@ Acesso direto, sem ordem, por meio de blocos de tamanho fixo (DB).
 Acesso direto, com índices
 
 ### 13.3 Directory Structure
-Pode ser visto como um tabela de símbolos que traduz nomes aos file control blocks.\
+Pode ser visto como um tabela de símbolos que traduz nomes aos file control blocks.
 
 Operações:
 * Search for a file
