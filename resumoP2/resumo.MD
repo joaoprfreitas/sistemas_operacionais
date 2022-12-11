@@ -194,7 +194,7 @@ Desejável:
 FIFO queue.\
 É não preemptivo.\
 **Vantagem**: é simples de implementar.\
-**Desvantagem**: tempo médio na waiting queue é geralmente bem grande.
+**Desvantagem**: tempo médio esperando na fila é geralmente bem grande.
 
 #### 5.3.2 Shortest-Job-First (SJF)
 Processos são executados na ordem de menor duração do CPU burst.\
